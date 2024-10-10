@@ -3,6 +3,33 @@ import Logo from '../assets/gallery.png';
 import { IoChevronBackOutline } from "react-icons/io5";
 
 const ImageDetail = ({ image, onBack }) => {
+  const downloadImageAsPng = async () => {
+    // Faz o fetch da imagem
+    const response = await fetch(image.download_url);
+    const blob = await response.blob(); // Converte a resposta em um blob
+    const url = URL.createObjectURL(blob); // Cria uma URL a partir do blob
+    const img = new Image();
+    img.src = url;
+    
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = img.width; 
+      canvas.height = img.height; 
+      ctx.drawImage(img, 0, 0); 
+
+      // Gera o link de download
+      canvas.toBlob((blob) => {
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `${image.author.replace(/\s+/g, '_')}_image.png`;
+        document.body.appendChild(link);
+        link.click(); // Simula o clique para download
+        document.body.removeChild(link); 
+      }, 'image/png');
+    };
+  };
+
   return (
     <div>
       <nav className="bg-white p-4">
@@ -37,6 +64,12 @@ const ImageDetail = ({ image, onBack }) => {
               <p className="text-sm text-gray-600">
                 Dimensões: {image.width} x {image.height}
               </p>
+              <button
+                onClick={downloadImageAsPng}
+                className="mt-4 bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition"
+              >
+                Download PNG
+              </button>
             </div>
           </div>
         </div>
