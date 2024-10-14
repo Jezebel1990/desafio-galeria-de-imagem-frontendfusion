@@ -42,7 +42,7 @@ const ImageDetail = ({ image, onBack }) => {
         <div className="flex flex-col items-start">
           <button
             onClick={onBack}
-            className="mb-4 text-pink-500 hover:underline flex items-center font-bold"
+            className="mb-4 text-accent hover:text-darkviolet flex items-center font-bold"
           >
             <IoChevronBackOutline className="mr-1" /> 
             Voltar
@@ -66,7 +66,7 @@ const ImageDetail = ({ image, onBack }) => {
               </p>
               <button
                 onClick={downloadImageAsPng}
-                className="mt-4 bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition"
+                className="mt-4 bg-accent text-white px-4 py-2 rounded hover:bg-darkviolet transition"
               >
                 Download PNG
               </button>
