@@ -12,6 +12,14 @@ export default {
       xl: '1200px',
     },
     extend: {
+      colors: {
+        accent: '#B809C3',
+        darkviolet: '#5b1778',
+         
+      },
+      backgroundImage: {
+        site: "url('./assets/textbox.png')",
+    },
     },
   },
   plugins: [],
