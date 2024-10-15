@@ -12,6 +12,10 @@ export default {
       xl: '1200px',
     },
     extend: {
+      fontFamily: {
+        'rubik-mono': ['Rubik Mono One', 'sans-serif'],
+
+      },
       colors: {
         accent: '#B809C3',
         darkviolet: '#5b1778',
