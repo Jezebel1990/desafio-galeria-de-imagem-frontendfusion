@@ -18,6 +18,7 @@ const Navbar = ({ showFavorites, setShowFavorites, goHome }) => {
             HOME
           </button>
           <button
+           aria-label="Favoritos"
            onClick={() => setShowFavorites(!showFavorites)}
             className={`text-black hover:text-gray-500 px-3 py-2 rounded-md text-sm font-bold ${
                     showFavorites ? 'text-white' : ''
