@@ -31,6 +31,37 @@
 - **Consumo de API**: Utiliza **Axios** para realizar requisições à API Picsum Photos, carregando as imagens de forma dinâmica conforme o usuário interage com a galeria.
 
 
+## Como Rodar o Projeto
+
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/Jezebel1990/desafio-galeria-de-imagem-frontendfusion.git
+   cd desafio-galeria-de-imagem-frontendfusion
+   ```
+2. Instale as dependências:
+  ```bash
+    npm install
+   ```
+3. Execute o projeto em desenvolvimento:
+  ```bash
+    npm run dev
+   ```
+4. Abra o navegador em http://localhost:5173 para ver a aplicação.
+
+## Estrutura do Projeto
+
+| Estrutura         | Descrição                                                                 |
+| ----------------- | ------------------------------------------------------------------------- |
+| `/src`            | Contém o código-fonte do projeto, incluindo os componentes React.         |
+| `/src/components` | Inclui os componentes principais:  `Navbar`, `ImageDetails`, `Spinner` e `Footer`. |
+| `/src/store`      | Contém os arquivos relacionados ao gerenciamento de estado da aplicação, incluindo as slices do Redux Toolkit para imagens e favoritos. |
+| `/src/assets` | Contém arquivos de imagens. |
+| `/src/App.jsx`    | Componente raiz da aplicação que orquestra todos os componentes e define a estrutura principal da página. |
+| `/src/slices/imagesSlice.jsx`  | Inclui a lógica para fazer requisições HTTP usando **Axios**, responsável por buscar as imagens da API [Picsum Photos](https://picsum.photos). |
+| `/public`         | Contém o arquivo de logo em formato SVG utilizado no projeto.   
+| **Testes**       | Os testes unitários são colocados diretamente junto aos componentes e slices correspondentes, seguindo a abordagem de **Testes Próximos ao Código**. |
+
+
 ## Licença
 Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
 
