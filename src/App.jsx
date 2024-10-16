@@ -19,7 +19,13 @@ const arrayToRgbString = (rgbArray) => {
 };
 
 const colorNames = {
-  // (o objeto colorNames permanece o mesmo)
+  vermelho: ['rgb(255, 0, 0)', 'rgb(62, 14, 15)'],
+  azul: ['rgb(0, 0, 255)', 'rgb(30, 63, 69)', 'rgb(72, 93, 106)'],
+  verde: ['rgb(0, 128, 0)', 'rgb(41, 66, 49)', 'rgb(34, 57, 46)', 'rgb(40, 64, 40)', 'rgb(74, 116, 64)', 'rgb(50, 68, 41)', 'rgb(86, 116, 44)'],
+  preto: ['rgb(0, 0, 0)', 'rgb(34, 29, 31)', 'rgb(42, 38, 44)', 'rgb(52, 54, 54)', 'rgb(18, 21, 21)', 'rgb(193, 220, 206)'],
+  branco: 'rgb(255, 255, 255)',
+  marrom: ['rgb(182, 147, 113)', 'rgb(43, 30, 17)', 'rgb(36, 30, 27)', 'rgb(175, 143, 111)', 'rgb(138, 94, 60)', 'rgb(140, 91, 57)', 'rgb(150, 117, 74)', 'rgb(169, 129, 77)', 'rgb(203, 167, 142)', 'rgb(167, 124, 94)'],
+  cinza: ['rgb(208, 213, 212)', 'rgb(133, 174, 187)', 'rgb(146, 151, 143)', 'rgb(201, 199, 175)', 'rgb(232, 223, 224)', 'rgb(95, 91, 94)']
 };
 
 const ImageItem = ({ image, onSelect, isFavorite, onToggleFavorite, setDominantColors }) => {
