@@ -53,65 +53,66 @@ const ImageDetail = ({ image, onBack }) => {
   );
 
   return (
-    <div>
-      <nav className="bg-white p-4">
-        <div className="max-w-screen-lg mx-auto flex justify-start"> 
-          <img src={Logo} alt="Gallery Logo" width={150} />
-        </div>
-      </nav>
-
-      <motion.div
-        className="max-w-screen-lg mx-auto p-4"
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        variants={variantesDiv}
-        transition={{ duration: 0.5 }}
-      >
-        <motion.div className="flex flex-col items-start">
-          <motion.button
-            onClick={onBack}
-            className="mb-4 text-accent hover:text-darkviolet flex items-center font-bold"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <IoChevronBackOutline className="mr-1" /> 
-            Voltar
-          </motion.button>
-
-          <div className="flex flex-col items-center">
-            <motion.img
-              src={image.download_url}
-              alt={image.author}
-              style={{
-                width: `${image.width}px`,
-                height: 'auto',
-                maxWidth: '100%',
-                rotate,  
-                boxShadow, 
-              }}
-              className="rounded-lg shadow-lg"
-            />
-            <div className="p-4 text-center">
-              <p className="font-semibold">Autor: {image.author}</p>
-              <p className="text-sm text-gray-600">
-                Dimensões: {image.width} x {image.height}
-              </p>
-              <motion.button
-                variants={variantesBotao}
-                whileHover="hover"
-                whileTap="tap"
-                onClick={downloadImageAsPng}
-                className="mt-4 bg-accent text-white px-4 py-2 rounded"
-              >
-                Download PNG
-              </motion.button>
-            </div>
-          </div>
-        </motion.div>
-      </motion.div>
+    <div className="min-h-screen flex flex-col justify-between">
+  <nav className="bg-white p-4">
+    <div className="max-w-screen-lg mx-auto flex justify-start">
+      <img src={Logo} alt="Gallery Logo" width={150} />
     </div>
+  </nav>
+
+  <motion.div
+    className="max-w-screen-lg mx-auto p-4 flex-grow"
+    initial="initial"
+    animate="animate"
+    exit="exit"
+    variants={variantesDiv}
+    transition={{ duration: 0.5 }}
+  >
+    {/* Conteúdo do componente */}
+    <motion.div className="flex flex-col items-start">
+      <motion.button
+        onClick={onBack}
+        className="mb-4 text-accent hover:text-darkviolet flex items-center font-bold"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 300 }}
+      >
+        <IoChevronBackOutline className="mr-1" />
+        Voltar
+      </motion.button>
+
+      <div className="flex flex-col items-center">
+        <motion.img
+          src={image.download_url}
+          alt={image.author}
+          style={{
+            width: `${image.width}px`,
+            height: 'auto',
+            maxWidth: '100%',
+            rotate,
+            boxShadow,
+          }}
+          className="rounded-lg shadow-lg"
+        />
+        <div className="p-4 text-center">
+          <p className="font-semibold">Autor: {image.author}</p>
+          <p className="text-sm text-gray-600">
+            Dimensões: {image.width} x {image.height}
+          </p>
+          <motion.button
+            variants={variantesBotao}
+            whileHover="hover"
+            whileTap="tap"
+            onClick={downloadImageAsPng}
+            className="mt-4 bg-accent text-white px-4 py-2 rounded"
+          >
+            Download PNG
+          </motion.button>
+        </div>
+      </div>
+    </motion.div>
+  </motion.div>
+  </div>
   );
 };
 

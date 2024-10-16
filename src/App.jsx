@@ -141,7 +141,7 @@ const App = () => {
       <main className="container mx-auto p-4 flex-grow"> {/* Adicione flex-grow para ocupar o espaço restante */}
         <div className='bg-site bg-cover bg-center p-8 rounded-lg mb-5'>
           {/* Restante do conteúdo */}
-          <div className="text-base md:text-xl xl:text-3xl uppercase font-bold text-white xl:mb-8 mt-6 md:m-3 xl:m-28 text-center">
+          <div className="text-base md:text-xl xl:text-3xl uppercase font-bold text-white xl:mb-8 mt-16 md:m-3 xl:m-28 text-center">
             {showFavorites ? 'Imagens Favoritas' : 'Encontre imagens para baixar!'}
             <TypeAnimation
               sequence={['Cada cor conta uma história, qual é a sua?', 2000]}
